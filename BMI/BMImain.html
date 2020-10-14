@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate your BMI</title>
+</head>
+<style>
+    .main{
+        border: solid 1px black;
+        max-width: fit-content;
+        text-align:center;
+        margin-top: 5%;
+    }
+    td{
+        padding: 30px;
+        font-size: 20px;
+    }td input{
+        width: 200px;
+        height: 50px;
+        font-size: 30px;
+    }
+</style>
+<body><center>
+    <div class="main">
+        <form action="bmi.php" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <p>Height<br>(cm)</p>
+                    </td>
+                    <td><input type="number" name="height"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Weight<br>(kg)</p>
+                    </td>
+                    <td><input type="number" name="weight"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input style="font-size: 25px;" type="submit" value="Compute BMI" name="calculate"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
