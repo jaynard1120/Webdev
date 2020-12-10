@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/form.css">
+</head>
+
+<body><center>
+
+<div class = "card card-3">
+    <div class = "card-heading" style="background-image: url('../public/img.jpg')">
+    </div>
+    <div class = "card-body">
+        
+        <form action="/home" method="post">
+        <h2 class = "title">Registration Info</h2>
+            <div class = "input-group">
+              <input type="text" class="input--style-3" placeholder = "First Name ..." name="fName" required autocomplete='off'>
+            </div>
+            <div class = "input-group">
+              <input type="text" class="input--style-3" placeholder = "Last Name ..." name="lName" required autocomplete='off'>
+            </div>
+            <div class = "input-group">
+              <input type="email" class="input--style-3" placeholder = "Email Address ..." name="email" id="email" required autocomplete='off'>
+            </div>
+            <div class = "input-group">
+              <input type="password" class="input--style-3" placeholder = "Password ..." name="pass" required autocomplete='off'>
+            </div>
+            <button type="submit" name="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</div>
+<div class="error">
+    <small id="eremail"></small>
+    <ul class="list-group">
+        <% for(let i = 0; i< data.length; i++){ %>
+        <li class="list-group-item"><%= data[i] %></li>
+        <% } %>
+    </ul>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(() => {
+        $("#email").on("input", function() {
+        var filter = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (!filter.test($("#email").val())) {
+            $('#eremail').text('Invalid email address!')
+            $('.btn').attr("disabled", true)
+        } else {
+            $('#eremail').text("")
+            $('.btn').attr("disabled", false)
+        }
+    });
+    })
+</script>
+</html>

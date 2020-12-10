@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title%></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<style>
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .fb-profile img.fb-image-lg {
+    z-index: 0;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .fb-image-profile {
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 20%;
+  }
+
+  @media (max-width:768px) {
+
+    .fb-profile-text>h1 {
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .fb-image-profile {
+      margin: -45px 10px 0px 25px;
+      z-index: 9;
+      width: 20%;
+    }
+  }
+
+  ul {
+    width: 50%;
+  }
+</style>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/"
+          alt="Profile image example" />
+        <img align="left" class="fb-image-profile thumbnail" src="https://data.whicdn.com/images/310397974/original.jpg"
+          alt="Profile image example" />
+        <div class="fb-profile-text">
+          <h1><%= data.fName%> <%= data.lName%></h1>
+          <p>We just wanna go fun.</p>
+          <div style="width: 50%;float: left;">
+            <li class="list-group-item">Firstname: <%= data.fName%></li>
+            <li class="list-group-item">Lastname: <%= data.lName%></li>
+            <li class="list-group-item">Email Address: <%= data.email%></li>
+            <li class="list-group-item">Password: <%= data.password%></li>
+      
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <center>
+</body>
+
+</html>
